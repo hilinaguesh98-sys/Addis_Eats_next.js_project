@@ -18,8 +18,10 @@ export const metadata = {
   description: defaultDescription,
   openGraph: {
     type: 'website',
+    description: defaultDescription,
     siteName: 'AddisEats',
     ...createOpenGraphMetadata(defaultTitle, defaultDescription, '/'),
+    images: ["/meta.jpg"],
   },
   icons: {
     icon: '/favicon.svg',
