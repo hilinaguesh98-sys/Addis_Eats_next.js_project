@@ -1,0 +1,61 @@
+import cheeseBurger from '../app/assets/cheese_burger.jpg'
+import beefBurger from '../app/assets/beef_burger.webp'
+import doubleBaconBurger from '../app/assets/double_bacon_burger.jpg'
+import pizza from '../app/assets/pizza.jpg'
+import pepperoniPizza from '../app/assets/pepperoni_pizza.jpg'
+import veggiePizza from '../app/assets/veggie_pizza.jpg'
+import doroWat from '../app/assets/doro_wat.webp'
+import beyaynetu from '../app/assets/beyaynetu.webp'
+import tibs from '../app/assets/tibs.jpg'
+import shiroWat from '../app/assets/shiro_wat.webp'
+import misirWat from '../app/assets/misir_wat.jpg'
+import sigaKurt from '../app/assets/siga_kurt.jpg'
+import sheklaTibs from '../app/assets/shekla_tibs.jpg'
+import kitfo from '../app/assets/kitfo.jpg'
+import fries from '../app/assets/fries.webp'
+import garlicBread from '../app/assets/garlic_bread.jpg'
+import orangeJuice from '../app/assets/orange_juice.jpg'
+import cocaCola from '../app/assets/coca_cola.jpg'
+import sprite from '../app/assets/sprite.jpg'
+import macchiato from '../app/assets/macchiato.jpg'
+
+export const dishes = [
+  { id:'item-1', name:'Cheese Burger', category:'burgers', price:400, image:cheeseBurger, imageAlt:'Cheese Burger', tag:'Popular', description:'Juicy beef patty topped with melted cheddar cheese and fresh veggies.', ingredients:['Beef Patty','Cheddar Cheese','Lettuce','Tomato','Burger Bun','House Sauce'] },
+  { id:'item-2', name:'Beef Burger', category:'burgers', price:350, image:beefBurger, imageAlt:'Beef Burger', tag:null, description:'Grilled classic beef patty served with lettuce, tomato, and house sauce.', ingredients:['Beef Patty','Lettuce','Tomato','Pickles','Burger Bun','House Sauce'] },
+  { id:'item-3', name:'Double Bacon Cheeseburger', category:'burgers', price:550, image:doubleBaconBurger, imageAlt:'Double Bacon Cheeseburger', tag:'Popular', description:'Two seasoned beef patties layered with crispy bacon and double cheese.', ingredients:['Beef Patties','Crispy Bacon','Cheddar Cheese','Lettuce','Burger Bun','House Sauce'] },
+  { id:'item-4', name:'Margherita Pizza', category:'pizza', price:500, image:pizza, imageAlt:'Margherita Pizza', tag:null, description:'Freshly baked pizza topped with savory tomato sauce and mozzarella cheese.', ingredients:['Pizza Dough','Tomato Sauce','Mozzarella Cheese','Fresh Basil','Olive Oil'] },
+  { id:'item-5', name:'Beef Pepperoni Pizza', category:'pizza', price:600, image:pepperoniPizza, imageAlt:'Beef Pepperoni Pizza', tag:'Popular', description:'Classic stone-baked crust topped with sliced beef pepperoni and extra cheese.', ingredients:['Pizza Dough','Tomato Sauce','Mozzarella Cheese','Beef Pepperoni'] },
+  { id:'item-6', name:'Veggie Pizza', category:'pizza', price:520, image:veggiePizza, imageAlt:'Veggie Delight Pizza', tag:'Vegetarian', description:'Loaded with bell peppers, onions, olives, mushrooms, and mozzarella.', ingredients:['Pizza Dough','Tomato Sauce','Mozzarella Cheese','Bell Peppers','Onions','Black Olives','Mushrooms'] },
+  { id:'item-7', name:'Doro Wat', category:'ethiopian', price:550, image:doroWat, imageAlt:'Doro wat', tag:'Popular', description:'A traditional Ethiopian slow-cooked chicken stew with boiled eggs and injera.', ingredients:['Chicken','Berbere','Onions','Garlic','Ginger','Hard-boiled Egg','Niter Kibbeh','Injera'] },
+  { id:'item-8', name:'Beyaynetu', category:'ethiopian', price:350, image:beyaynetu, imageAlt:'Beyaynetu', tag:'Vegetarian', description:'A traditional Ethiopian platter featuring a colorful variety of vegan stews.', ingredients:['Injera','Misir Wat','Kik Alicha','Gomen','Shiro','Atakilt Wat','Beetroot'] },
+  { id:'item-9', name:'Tibs', category:'ethiopian', price:450, image:tibs, imageAlt:'Tibs', tag:null, description:'Sautéed beef strips seasoned with onions, garlic, rosemary, and green peppers.', ingredients:['Beef Strips','Onions','Jalapeño','Garlic','Rosemary','Niter Kibbeh','Injera'] },
+  { id:'item-10', name:'Shiro Wat', category:'ethiopian', price:350, image:shiroWat, imageAlt:'Shiro wat', tag:'Vegetarian', description:'A rich and savory chickpea flour stew served bubbling hot with injera.', ingredients:['Chickpea Flour (Shiro)','Garlic','Onions','Berbere','Vegetable Oil','Injera'] },
+  { id:'item-11', name:'Misir Wat', category:'ethiopian', price:450, image:misirWat, imageAlt:'Misir wat', tag:'Vegetarian', description:'Spicy red lentil stew simmered in authentic berbere spices.', ingredients:['Red Lentils','Berbere','Onions','Garlic','Ginger','Injera'] },
+  { id:'item-13', name:'Siga Kurt', category:'ethiopian', price:550, image:sigaKurt, imageAlt:'Siga kurt', tag:'Popular', description:'Freshly carved raw beef served with mitmita and warm awaze dip.', ingredients:['Raw Beef Cuts','Mitmita','Awaze Dip','Injera'] },
+  { id:'item-14', name:'Shekla Tibs', category:'ethiopian', price:550, image:sheklaTibs, imageAlt:'Shekla tibs', tag:null, description:'Sizzling beef served in a traditional heated clay pot over live coals.', ingredients:['Beef Cubes','Niter Kibbeh','Onions','Green Peppers','Rosemary','Injera'] },
+  { id:'item-15', name:'Kitfo', category:'ethiopian', price:450, image:kitfo, imageAlt:'Kitfo', tag:null, description:'Minced tender beef seasoned with purified niter kibbeh and mitmita.', ingredients:['Minced Beef','Purified Niter Kibbeh','Mitmita','Koramima','Ayib (Cheese)','Gomen','Injera'] },
+  { id:'item-16', name:'French Fries', category:'sides', price:180, image:fries, imageAlt:'French Fries', tag:null, description:'Crispy golden fried potato chips seasoned light with sea salt.', ingredients:['Potatoes','Vegetable Oil','Sea Salt'] },
+  { id:'item-17', name:'Garlic Bread', category:'sides', price:150, image:garlicBread, imageAlt:'Garlic Bread', tag:null, description:'Toasted baguette slices brushed with garlic butter and parsley.', ingredients:['Baguette Slices','Garlic Butter','Parsley'] },
+  { id:'item-18', name:'Fresh Orange Juice', category:'drinks', price:120, image:orangeJuice, imageAlt:'Fresh Orange Juice', tag:'Popular', description:'100% freshly squeezed natural orange juice.', ingredients:['Freshly Squeezed Oranges'] },
+  { id:'item-19', name:'Coca-Cola', category:'drinks', price:60, image:cocaCola, imageAlt:'Coca-Cola', tag:null, description:'Chilled 330ml glass bottle classic Coca-Cola.', ingredients:['Carbonated Water','Sugar','Caramel Color','Phosphoric Acid','Natural Flavors','Caffeine'] },
+  { id:'item-20', name:'Sprite', category:'drinks', price:60, image:sprite, imageAlt:'Sprite', tag:null, description:'Chilled 330ml glass bottle crisp lemon-lime Sprite.', ingredients:['Carbonated Water','Sugar','Citric Acid','Natural Lemon-Lime Flavors'] },
+  { id:'item-21', name:'Macchiato', category:'drinks', price:80, image:macchiato, imageAlt:'Ethiopian Macchiato', tag:'Popular', description:'Rich layered espresso with steamed foam milk.', ingredients:['Espresso','Steamed Milk','Milk Foam'] }
+]
+
+export const categories = [
+  { id:'all', label:'All' },
+  { id:'ethiopian', label:'Ethiopian' },
+  { id:'pizza', label:'Pizza' },
+  { id:'burgers', label:'Burger' },
+  { id:'sides', label:'Sides' },
+  { id:'drinks', label:'Drinks' },
+  { id:'desserts', label:'Desserts' }
+]
+
+export function getDish(id) {
+  return dishes.find((dish) => dish.id === id)
+}
+
+export function getImageUrl(image) {
+  return typeof image === 'string' ? image : image?.src || ''
+}
