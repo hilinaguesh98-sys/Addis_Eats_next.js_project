@@ -10,7 +10,7 @@ export default function OrderStatus({ initialOrder }) {
   const [now, setNow] = useState(() => Date.now())
   const { data, error } = useSWR(`/api/orders/${initialOrder.id}`, fetcher, {
     fallbackData: { order: initialOrder },
-    refreshInterval: 5000,
+    refreshInterval: 10000,
     refreshWhenHidden: true,
     revalidateOnFocus: false,
     dedupingInterval: 1000
@@ -31,7 +31,7 @@ export default function OrderStatus({ initialOrder }) {
       <section className="order-status-panel" aria-live="polite">
         <div className="order-status-heading"><div><span>Current status</span><h2>{status}</h2></div><span className="status">{status}</span></div>
         <div className="order-status-progress"><span className={status === 'Preparing' ? 'current' : 'complete'}>Received</span><span className={status === 'Preparing' ? 'current' : status === 'On the way' || status === 'Delivered' ? 'complete' : ''}>Preparing</span><span className={status === 'On the way' ? 'current' : status === 'Delivered' ? 'complete' : ''}>On the way</span><span className={status === 'Delivered' ? 'current' : ''}>Delivered</span></div>
-        <p className="order-updated">Status advances every 3 seconds: Preparing, On the way, then Delivered.</p>
+        <p className="order-updated"></p>
       </section>
       <section className="order-status-panel">
         <h2>Order details</h2>

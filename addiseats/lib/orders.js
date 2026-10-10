@@ -13,7 +13,14 @@ export function createOrder(payload) {
   }).filter(Boolean)
   const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0)
   const total = subtotal + 80
-  const id = `AE-${Math.floor(1000 + Math.random() * 9000)}`
+
+  const existingNumbers = [...store.values()]
+    .map((order) => Number(String(order.id).replace(/^AE\s*[-]?/i, '')))
+    .filter((value) => Number.isFinite(value))
+
+  const nextNumber = existingNumbers.length ? Math.max(...existingNumbers) + 1 : 12
+  const id = `AE${nextNumber}`
+
   const order = { id, userId: payload.userId, name: payload.name, phone: payload.phone, address:
      payload.address, items, subtotal, delivery: 80, total, status: 'Preparing', date: 
      new Date().toLocaleString('en-US',

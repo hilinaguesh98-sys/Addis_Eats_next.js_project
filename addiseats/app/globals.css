@@ -143,6 +143,8 @@ body{margin:0;
 .auth-panel h1{font-size:24px;margin:0}
 .auth-copy{color:#858b8e;font-size:12px;margin:7px 0 18px}
 .auth-form{display:grid;gap:13px}
+.auth-form .auth-error{min-height:34px;margin:0;visibility:hidden}
+.auth-form .auth-error.has-error{visibility:visible}
 .auth-form label{display:grid;gap:6px;font-size:12px;font-weight:700}
 .auth-form input:not([type=hidden]){border:1px solid #ddd;border-radius:4px;padding:10px;outline-color:#f47d16}
 .auth-form .checkout-button{margin-top:4px}

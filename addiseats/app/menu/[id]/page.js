@@ -23,9 +23,7 @@ export async function generateMetadata({ params }) {
       description: dish.description,
       url: absoluteUrl(`/menu/${dish.id}`),
       images: [{
-        url: absoluteUrl(`/menu/${dish.id}/opengraph-image`),
-        width: 1200,
-        height: 630,
+        url: absoluteUrl(dish.openGraphImage),
         alt: dish.imageAlt || dish.name,
       }],
     },

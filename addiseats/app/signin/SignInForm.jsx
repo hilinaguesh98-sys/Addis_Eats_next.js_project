@@ -33,7 +33,7 @@ export default function SignInForm({ requestedNext }) {
   }
 
   return <form className="auth-form" onSubmit={submit}>
-    {error ? <p className="error-box" role="alert">{error}</p> : null}
+    <p className={`error-box auth-error${error ? ' has-error' : ''}`} role="alert" aria-hidden={!error}>{error}</p>
     <label>Email<input name="email" type="email" autoComplete="username" required/></label>
     <label>Password<input name="password" type="password" autoComplete="current-password" required/></label>
     <input name="next" type="hidden" value={requestedNext}/>
