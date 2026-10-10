@@ -24,6 +24,8 @@ export async function generateMetadata({ params }) {
       url: absoluteUrl(`/menu/${dish.id}`),
       images: [{
         url: absoluteUrl(dish.openGraphImage),
+        width: 1200,
+        height: 630,
         alt: dish.imageAlt || dish.name,
       }],
     },
