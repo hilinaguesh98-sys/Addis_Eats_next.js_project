@@ -18,7 +18,7 @@ Addis Eats is a JavaScript food-delivery capstone built with the Next.js App Rou
 
 ## Main features
 
-- HMAC-signed sessions in a secure, `httpOnly` cookie; middleware, page, and data/write authorization checks.
+- HMAC-signed sessions in a secure, `httpOnly` cookie; proxy, page, and data/write authorization checks.
 - Order reads scoped to the signed-in session, with not-found behavior for another user's order ID.
 - Server rendering for menu, dishes, order history, order status seed data, and confirmation data.
 - Debounced client menu search and five-second SWR order-status polling.
@@ -59,7 +59,7 @@ Before deployment, configure a unique `AUTH_SECRET`, set the canonical `NEXT_PUB
 
 ## Week 9 / Day 45 features
 
-- Authentication and authorization: cookie-backed sessions, middleware, server-page guards, staff role check, session-scoped order access, and server-side write validation.
+- Authentication and authorization: cookie-backed sessions, proxy, server-page guards, staff role check, session-scoped order access, and server-side write validation.
 - Data fetching: server-first public/private data, `fallbackData` for initial live status, SWR polling, debounced search, and browser-local cart/favorites.
 - Performance: image/font optimizations and measured Lighthouse results/known target gaps are recorded in [PERF.md](./PERF.md).
 - SEO: route metadata, dynamic dish metadata and social preview, JSON-LD, sitemap, and robots rules.

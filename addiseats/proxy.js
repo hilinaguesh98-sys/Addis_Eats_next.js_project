@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { SESSION_COOKIE, verifySessionToken } from './lib/session-token'
 
-export async function middleware(request) {
+export async function proxy(request) {
   const token = request.cookies.get(SESSION_COOKIE)?.value
   if (await verifySessionToken(token)) return NextResponse.next()
 
