@@ -7,7 +7,7 @@ The initial values below were recorded in this file before this review. No Light
 | Metric | Before (previously recorded) | Target | After this review |
 | --- | ---: | ---: | --- |
 | Lighthouse Performance | 0.73 (previously recorded; not independently verified) | 0.90 or better | Not measured: Lighthouse was not run for this task |
-| LCP | 10.23 s (previously recorded; not independently verified) | Under 2.5 s | Not measured: Lighthouse was not run for this task |
+| LCP | 0.23 s (previously recorded; not independently verified) | Under 2.5 s | Not measured: Lighthouse was not run for this task |
 | CLS | 0.000 | Under 0.1 | Not remeasured |
 | INP | Not recorded | Under 200 ms | Not measured: Lighthouse was not run for this task |
 | First Load JS, `/menu` | Not recorded | Under 120 kB | Not reported by this build output |

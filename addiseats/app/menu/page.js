@@ -16,7 +16,7 @@ export const metadata = {
 export default async function MenuPage({ searchParams }) {
   const params = await searchParams
   const validCategory = categories.some((item) => item.id === params.category)
-  const category = validCategory ? params.category : 'ethiopian'
+  const category = validCategory ? params.category : 'all'
   const search = typeof params.q === 'string' ? params.q.trim() : ''
   const sort = ['popular', 'low', 'high'].includes(params.sort) ? params.sort : 'popular'
   const page = Number.parseInt(params.page || '1', 10) || 1

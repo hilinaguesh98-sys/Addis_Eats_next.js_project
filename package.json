@@ -1,0 +1,10 @@
+{
+  "name": "addis-eats-next-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix addiseats run dev",
+    "build": "npm --prefix addiseats run build",
+    "start": "npm --prefix addiseats run start"
+  }
+}

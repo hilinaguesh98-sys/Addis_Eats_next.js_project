@@ -1,4 +1,5 @@
 import HomeClient from './HomeClient'
+import HomeHero from './HomeHero'
 import { createOpenGraphMetadata } from '../lib/site'
 
 export const metadata = {
@@ -12,5 +13,8 @@ export const metadata = {
 }
 
 export default function HomePage() {
-  return <HomeClient />
+  return <>
+    <HomeHero />
+    <HomeClient />
+  </>
 }

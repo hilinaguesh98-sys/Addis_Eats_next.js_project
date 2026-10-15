@@ -7,7 +7,7 @@ import { createOpenGraphMetadata } from '../../../lib/site'
 export async function generateMetadata({ params }) {
   const { id } = await params
   const title = 'Order Confirmation'
-  const description = 'View the confirmation and delivery estimate for your Addis Eats order.'
+  const description = 'View your order confirmation and current Addis Eats delivery status.'
 
   return {
     title,

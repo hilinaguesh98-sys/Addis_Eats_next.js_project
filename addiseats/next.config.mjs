@@ -7,6 +7,10 @@ const projectRoot = dirname(fileURLToPath(import.meta.url))
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: projectRoot,
+  images: {
+    formats: ['image/avif'],
+    qualities: [65, 75],
+  },
   turbopack: {
     root: projectRoot
   }

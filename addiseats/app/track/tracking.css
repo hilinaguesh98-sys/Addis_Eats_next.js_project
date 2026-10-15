@@ -1,0 +1,30 @@
+.delivery-tracking-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:16px;align-items:start}
+.tracking-live-status,.delivery-map-panel,.delivery-address-panel{background:#fff;border:1px solid #e6e6e6;border-radius:8px;padding:18px;margin-bottom:15px;min-width:0}
+.tracking-live-status{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.tracking-status-label{font-size:12px;color:#7b8184}
+.tracking-live-status h2{font-size:22px;margin:4px 0}
+.tracking-live-status p{font-size:12px;color:#858b8e;margin:0}
+.tracking-connection{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:20px;background:#f3f4f5;color:#555;font-size:12px;white-space:normal}
+.tracking-connection-connected{background:#e7f8ee;color:#176a3b}
+.tracking-connection-reconnecting{background:#fff3df;color:#8a4b00}
+.tracking-connection-closed{background:#f0f0f0;color:#5e6366}
+.delivery-map-panel h2,.delivery-address-panel h2{font-size:16px;margin:0 0 14px}
+.delivery-map-frame{overflow:hidden;border-radius:6px;border:1px solid #e6e6e6}
+.delivery-map-frame .leaflet-container{z-index:1;font-family:inherit}
+.delivery-map-placeholder{height:360px;display:grid;place-items:center;background:#f0f2f3;border:1px solid #e3e5e6;border-radius:6px;color:#6f7578;font-size:13px}
+.delivery-map-note{font-size:12px;color:#777;line-height:1.6;margin:10px 2px 0}
+.delivery-address-panel dl{margin:0}
+.delivery-address-panel dl>div{padding:10px 0;border-bottom:1px solid #eee}
+.delivery-address-panel dt{font-size:12px;color:#84898c;margin-bottom:4px}
+.delivery-address-panel dd{margin:0;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.tracking-order-total{display:flex;justify-content:space-between;gap:12px;padding:15px 0 5px;color:#666;font-size:13px}
+.tracking-order-total strong{color:#f47d16;font-size:16px}
+.delivery-address-panel .orange-button{margin-top:12px}
+.delivery-map-icon{background:transparent;border:0}
+.orders-toolbar-actions{display:flex;align-items:center;gap:12px}
+.orders-toolbar-actions>p{margin:0;font-size:12px;color:#777}
+.csv-export-button{border:1px solid #f0a35e;background:#fff8f1;color:#a94f00;border-radius:5px;padding:9px 11px;font-size:12px;font-weight:800;white-space:nowrap}
+.csv-export-button:hover{background:#fff0e2}
+@media(max-width:760px){.delivery-tracking-layout{grid-template-columns:1fr}.tracking-live-status{align-items:flex-start;flex-direction:column}.delivery-map-placeholder{height:320px}.delivery-map-frame .leaflet-container{height:320px!important}}
+@media(max-width:600px){.orders-toolbar-actions{align-items:flex-end;flex-direction:column;gap:8px}.csv-export-button{white-space:normal}.tracking-live-status,.delivery-map-panel,.delivery-address-panel{padding:14px}}
+

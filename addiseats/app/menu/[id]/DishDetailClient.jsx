@@ -28,9 +28,9 @@ export default function DishDetailClient({ dish }) {
       <p>{dish.description}</p><div className="detail-price">{dish.price.toLocaleString()} ETB</div>
       <h4>Ingredients</h4>
       <div className="ingredients">{dish.ingredients.map((item) => <span className="ingredient" key={item}>{item}</span>)}</div>
-      <div className="qty big"><button onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
-      <strong>{qty}</strong><button onClick={() => setQty(qty + 1)}>+</button></div>
-      <button className="checkout-button full" onClick={add}>
+      <div className="qty big"><button type="button" aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
+      <strong aria-live="polite">{qty}</strong><button type="button" aria-label="Increase quantity" onClick={() => setQty(qty + 1)}>+</button></div>
+      <button type="button" className="checkout-button full" onClick={add}>
         {added ? 'Added to Cart ✓' : `Add to Cart · ${(dish.price * qty).toLocaleString()} ETB`}</button>
         </div></div></div>
 }

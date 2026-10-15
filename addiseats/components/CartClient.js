@@ -38,9 +38,9 @@ export default function CartClient() {
             <div className="cart-copy"><strong>{dish.name}</strong>
             <span>{dish.category}</span>
             <b>{dish.price.toLocaleString()} ETB</b></div><div className="qty">
-              <button onClick={() => update(dish.id, qty - 1)} aria-label="Decrease quantity">−</button>
-              <span>{qty}</span><button onClick={() => update(dish.id, qty + 1)} aria-label="Increase quantity">+</button></div>
-              <button className="remove-item" onClick={() => update(dish.id, 0)} aria-label={`Remove ${dish.name}`}>×</button></div>)}
+              <button type="button" onClick={() => update(dish.id, qty - 1)} aria-label={`Decrease ${dish.name} quantity`}>−</button>
+              <span aria-live="polite">{qty}</span><button type="button" onClick={() => update(dish.id, qty + 1)} aria-label={`Increase ${dish.name} quantity`}>+</button></div>
+              <button type="button" className="remove-item" onClick={() => update(dish.id, 0)} aria-label={`Remove ${dish.name}`}>×</button></div>)}
               </div><Link href="/menu" className="continue">← Continue Shopping</Link></section><aside className="summary-card">
                 <p className="eyebrow">YOUR ORDER</p>
                 <h2>Order Summary</h2><div className="summary-line">

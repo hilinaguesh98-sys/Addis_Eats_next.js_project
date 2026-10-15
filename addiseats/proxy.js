@@ -16,6 +16,7 @@ export const config = {
     '/checkout/:path*',
     '/orders/:path*',
     '/order-confirmation/:path*',
-    '/kitchen/:path*'
+    '/kitchen/:path*',
+    '/dashboard/:path*'
   ]
 }

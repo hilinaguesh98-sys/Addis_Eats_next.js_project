@@ -20,5 +20,5 @@ export default async function SignInPage({ searchParams }) {
 
   if (session) redirect(getSafeNext(requestedNext) || '/')
 
-  return <div className="page-wrap container"><section className="auth-panel"><p className="eyebrow">WELCOME BACK</p><h1>Sign in to Addis Eats</h1><p className="auth-copy">Access your orders and complete checkout.</p><SignInForm requestedNext={requestedNext}/></section></div>
+  return <div className="page-wrap container"><section className="auth-panel"><p className="eyebrow">WELCOME BACK</p><h1>Sign in to Addis Eats</h1><p className="auth-copy">Access your orders and complete checkout.</p><SignInForm requestedNext={requestedNext} googleClientId={process.env.GOOGLE_CLIENT_ID || process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}/></section></div>
 }

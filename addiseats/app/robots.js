@@ -12,6 +12,7 @@ export default function robots() {
         '/orders',
         '/order-confirmation',
         '/kitchen',
+        '/dashboard',
         '/signin',
         '/favorites',
         '/api/',

@@ -1,54 +1,39 @@
-'use client'
-
 import Link from 'next/link'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { getOrderStatus } from '../../lib/order-statuses'
+import CsvExportButton from './CsvExportButton'
+import OrderTable from './OrderTable'
 
-export default function OrdersList({ orders }) {
-  const [tab, setTab] = useState('active')
-  const [now, setNow] = useState(() => Date.now())
+function queryHref({ page, sort, order, statusFilter }) {
+  const params = new URLSearchParams()
+  params.set('status', statusFilter)
+  params.set('sort', sort)
+  params.set('order', order)
+  params.set('page', String(page))
+  return `/orders?${params.toString()}`
+}
 
-  useEffect(() => {
-    const timer = window.setInterval(() => setNow(Date.now()), 250)
-    return () => window.clearInterval(timer)
-  }, [])
+export default function OrdersList({ orders, exportOrders = orders, page, pageCount, sort, order, statusFilter, totalCount, hasAnyOrders }) {
+  if (!hasAnyOrders || totalCount === 0) {
+    const title = !hasAnyOrders ? 'You have not placed an order yet' : statusFilter === 'active' ? 'No active orders' : 'No past orders'
+    return <div className="empty">
+      <div className="empty-icon"></div>
+      <h2>{title}</h2>
+      <p className="muted">{!hasAnyOrders ? 'Explore the menu and place your first order.' : 'Try the other order-history tab or browse the menu.'}</p>
+      <div className="order-empty-actions">
+        <Link className="orange-button" href="/menu">Browse Menu</Link>
+        {hasAnyOrders && <Link className="secondary-button" href={queryHref({ page: 1, sort, order, statusFilter: statusFilter === 'active' ? 'past' : 'active' })}>View {statusFilter === 'active' ? 'past' : 'active'} orders</Link>}
+        {hasAnyOrders && <CsvExportButton orders={exportOrders} />}
+      </div>
+    </div>
+  }
 
-  const visible = tab === 'active'
-    ? orders.filter((order) => !['Delivered', 'Cancelled'].includes(getOrderStatus(order, now)))
-    : orders.filter((order) => ['Delivered', 'Cancelled'].includes(getOrderStatus(order, now)))
-
-  return <div className="page-wrap container">
-    <div className="page-title orders-title">
-      <div><p className="eyebrow">ORDER HISTORY</p>
-      <h1>My Orders</h1>
-      <p>View and track your recent orders.</p>
-      </div><div className="order-tabs">
-        <button className={tab === 'active' ? 'active' : ''}
-         onClick={() => setTab('active')}>Active Orders</button>
-         <button className={tab === 'past' ? 'active' : ''}
-          onClick={() => setTab('past')}>Past Orders</button>
-          </div></div>{visible.length ? visible.map((order) => 
-          <div className="order-card" key={order.id}>
-            <div className="order-head"><strong>Order {order.id}</strong>
-            <span>Placed {order.date}</span>
-            <b className="status">{getOrderStatus(order, now)}</b>
-            </div><div className="order-body">
-              <div className="order-products">
-                {order.items.slice(0, 3).map((item) => <div className="mini-item" key={item.id}>
-                  <span>{item.qty}×</span>
-                  <Image src={item.image} alt={item.name} width={item.imageWidth} 
-                  height={item.imageHeight} sizes="36px"/><span>{item.name}
-                  </span></div>)}</div><div className="order-total">
-                    <span>Total Amount</span><strong>
-                      {order.total.toLocaleString()} ETB</strong>
-                      </div></div><div className="order-foot">
-                        <Link className="track-button" href={`/orders/${order.id}`}>Order Detail</Link></div>
-                        </div>) : 
-                        <div className="empty">
-                          <div className="empty-icon"></div>
-                          <h2>{tab === 'active' ? 'No active orders' : 'No past orders'}</h2>
-                          <p className="muted"></p>
-                          <Link className="orange-button" href="/menu">Order Food</Link></div>}</div>
-
+  return <section className="orders-table-section">
+    <div className="orders-table-toolbar">
+      <nav className="order-tabs" aria-label="Order history filter">
+        <Link className={statusFilter === 'active' ? 'active' : ''} aria-current={statusFilter === 'active' ? 'page' : undefined} href={queryHref({ page: 1, sort, order, statusFilter: 'active' })}>Active Orders</Link>
+        <Link className={statusFilter === 'past' ? 'active' : ''} aria-current={statusFilter === 'past' ? 'page' : undefined} href={queryHref({ page: 1, sort, order, statusFilter: 'past' })}>Past Orders</Link>
+      </nav>
+      <div className="orders-toolbar-actions"><p>{totalCount} {totalCount === 1 ? 'order' : 'orders'}</p><CsvExportButton orders={exportOrders} /></div>
+    </div>
+    <OrderTable orders={orders} page={page} pageCount={pageCount} sort={sort} order={order} statusFilter={statusFilter} />
+  </section>
 }

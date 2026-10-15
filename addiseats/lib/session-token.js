@@ -1,5 +1,5 @@
 const SESSION_COOKIE = 'addis_eats_session'
-export const SESSION_MAX_AGE = 60 * 60 * 24 * 7
+export const SESSION_MAX_AGE = 60*60*24
 const encoder = new TextEncoder()
 
 function getSecret() {
